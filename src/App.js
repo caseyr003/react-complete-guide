@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person'
+import { hidden } from 'ansi-colors';
 
 class App extends Component {
   state = {
@@ -29,10 +30,23 @@ class App extends Component {
   }
 
   render() {
+    const btnStyle = {
+      backgroundColor: 'teal',
+      borderRadius: '8px',
+      margin: '10px auto',
+      width: '60%',
+      height: '40px',
+      color: 'white',
+      fontSize: '24px',
+      cursor: 'pointer'
+    };
+
     return (
       <div className="App">
         <h1>React Course</h1>
-        <button onClick={this.changeNameHandler.bind(this, 'Case')}>Change Name</button>
+        <button
+          style={btnStyle} 
+          onClick={this.changeNameHandler.bind(this, 'Case')}>Change Name</button>
         <Person 
           name={this.state.persons[0].name}
           age={this.state.persons[0].age}
