@@ -9,3 +9,26 @@
 .bold {
   font-weight: bold;
 }
+
+.App button {
+  background-color: teal;
+  border-radius: 8px;
+  margin: 10px auto;
+  width: 60%;
+  height: 40px;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.App button:hover {
+  background-color: darkcyan;
+}
+
+.App button.Grey {
+  background-color: lightslategray;
+}
+
+.App button.Grey:hover {
+  background-color: darkslategrey;
+}

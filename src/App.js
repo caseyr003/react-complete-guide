@@ -40,18 +40,8 @@ class App extends Component {
   }
 
   render() {
-    const btnStyle = {
-      backgroundColor: 'teal',
-      borderRadius: '8px',
-      margin: '10px auto',
-      width: '60%',
-      height: '40px',
-      color: 'white',
-      fontSize: '24px',
-      cursor: 'pointer'
-    };
-
     let persons = null;
+    let btnClass = '';
 
     if ( this.state.showPersons ) {
       persons = (
@@ -66,8 +56,7 @@ class App extends Component {
           })}
         </div>
       );
-
-      btnStyle.backgroundColor = '#6b6b6b';
+      btnClass = styles.Grey
     }
 
     const classes = [];
@@ -81,7 +70,7 @@ class App extends Component {
         <h1>React Course</h1>
         <p className={classes.join(' ')}>List of People:</p>
         <button
-          style={btnStyle} 
+          className={btnClass}
           onClick={this.togglePersonHandler}>Toggle Person List</button>
         {persons}
       </div>
