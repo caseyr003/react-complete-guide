@@ -12,7 +12,7 @@ class App extends Component {
     showPersons: false
   }
 
-  changeNameHandler = (newName) => {
+  changeNameHandler = ( newName ) => {
     this.setState( {
       persons: [
         { name: 'Finley', age: 3 },
@@ -21,7 +21,7 @@ class App extends Component {
     } )
   }
 
-  nameChangedHandler = (event) => {
+  nameChangedHandler = ( event ) => {
     this.setState( {
       persons: [
         { name: 'Finley', age: 3 },
@@ -47,26 +47,31 @@ class App extends Component {
       cursor: 'pointer'
     };
 
+    let persons = null;
+
+    if ( this.state.showPersons ) {
+      persons = (
+        <div>
+          <Person 
+            name={this.state.persons[0].name}
+            age={this.state.persons[0].age}
+            click={this.changeNameHandler.bind(this, 'Caseyyyy')}>I'm a dog!</Person>
+          <Person 
+            name={this.state.persons[1].name}
+            age={this.state.persons[1].age}
+            click={this.changeNameHandler.bind(this, 'Caseman')}
+            changed={this.nameChangedHandler} />
+        </div>
+      );
+    }
+
     return (
       <div className="App">
         <h1>React Course</h1>
         <button
           style={btnStyle} 
           onClick={this.togglePersonHandler}>Toggle Person List</button>
-        {
-          this.state.showPersons ?
-            <div>
-              <Person 
-                name={this.state.persons[0].name}
-                age={this.state.persons[0].age}
-                click={this.changeNameHandler.bind(this, 'Caseyyyy')}>I'm a dog!</Person>
-              <Person 
-                name={this.state.persons[1].name}
-                age={this.state.persons[1].age}
-                click={this.changeNameHandler.bind(this, 'Caseman')}
-                changed={this.nameChangedHandler} />
-            </div> : null
-        }
+        {persons}
       </div>
     );
   }
