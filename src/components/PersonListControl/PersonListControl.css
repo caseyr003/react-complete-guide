@@ -1,0 +1,30 @@
+.red {
+  color: #ad2727;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.PersonListControl button {
+  background-color: teal;
+  border-radius: 8px;
+  margin: 10px auto;
+  width: 60%;
+  height: 40px;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.PersonListControl button:hover {
+  background-color: darkcyan;
+}
+
+.PersonListControl button.Grey {
+  background-color: lightslategray;
+}
+
+.PersonListControl button.Grey:hover {
+  background-color: darkslategrey;
+}
