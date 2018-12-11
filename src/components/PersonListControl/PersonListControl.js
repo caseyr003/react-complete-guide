@@ -15,7 +15,7 @@ const personListControl = (props) => {
   
   return (
     <div className={styles.PersonListControl}>
-      <h1>React Course</h1>
+      <h1>{props.appTitle}</h1>
       <p className={classes.join(' ')}>List of People:</p>
       <button
       className={btnClass}
