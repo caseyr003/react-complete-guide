@@ -18,7 +18,9 @@ class Persons extends PureComponent {
   componentWillReceiveProps(nextProps) {
     console.log('[Persons.js] Inside componentWillReceiveProps()', nextProps);
   }
-
+  
+  // When using PureComponent React does this check for you
+  // so shouldComponentUpdate can not be used
   // shouldComponentUpdate(nextProps, nextState) {
   //   console.log('[Persons.js] Inside shouldComponentUpdate()', nextProps, nextState);
   //   // DOM will not update with changes if false

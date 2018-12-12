@@ -26,6 +26,12 @@ class Person extends Component {
         <input type="text" onChange={this.props.changed} value={this.props.name}/>
       </div>
     )
+    // can return array of elements to not need wraping div
+    // return [
+    //   <p onClick={this.props.click}>Hi, I'm {this.props.name} and I'm {this.props.age}!</p>,
+    //   <p>{this.props.children}</p>,
+    //   <input type="text" onChange={this.props.changed} value={this.props.name}/>
+    // ]
   }
 }
 

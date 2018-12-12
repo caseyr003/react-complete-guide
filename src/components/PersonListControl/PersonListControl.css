@@ -6,7 +6,7 @@
   font-weight: bold;
 }
 
-.PersonListControl button {
+.Button {
   background-color: teal;
   border-radius: 8px;
   margin: 10px auto;
@@ -17,14 +17,14 @@
   cursor: pointer;
 }
 
-.PersonListControl button:hover {
+.button:hover {
   background-color: darkcyan;
 }
 
-.PersonListControl button.Grey {
+.Button.Grey {
   background-color: lightslategray;
 }
 
-.PersonListControl button.Grey:hover {
+.Button.Grey:hover {
   background-color: darkslategrey;
 }
