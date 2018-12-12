@@ -4,6 +4,19 @@ import Persons from '../components/Persons/Persons'
 import PersonListControl from '../components/PersonListControl/PersonListControl'
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    console.log('[App.js] Inside Constructor', props);
+  }
+
+  componentWillMount() {
+    console.log('[App.js] Inside componentWillMount()');
+  }
+
+  componentDidMount() {
+    console.log('[App.js] Inside componentDidMount()');
+  }
+
   state = {
     persons: [
       { id: '0001', name: 'Finley', age: 3 },
@@ -41,6 +54,8 @@ class App extends Component {
   }
 
   render() {
+    console.log('[App.js] Inside render()');
+
     let persons = null;
 
     if ( this.state.showPersons ) {
