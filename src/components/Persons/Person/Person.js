@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
 import styles from './Person.css'
-import WithClass from '../../../hoc/WithClass'
+import Aux from '../../../hoc/Aux'
+import withClass from '../../../hoc/withClass'
 
 class Person extends Component {
   constructor(props) {
@@ -21,11 +22,11 @@ class Person extends Component {
     console.log('[Person.js] Inside render()');
 
     return (
-      <WithClass styles={styles.Person}>
+      <Aux>
         <p onClick={this.props.click}>Hi, I'm {this.props.name} and I'm {this.props.age}!</p>
         <p>{this.props.children}</p>
         <input type="text" onChange={this.props.changed} value={this.props.name}/>
-      </WithClass>
+      </Aux>
     )
     // can return array of elements to not need wraping div
     // return [
@@ -36,4 +37,4 @@ class Person extends Component {
   }
 }
 
-export default Person;
+export default withClass(Person, styles.Person);
