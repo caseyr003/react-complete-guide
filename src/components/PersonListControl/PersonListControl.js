@@ -27,4 +27,4 @@ const personListControl = (props) => {
   );
 };
 
-export default personListControl;
+export default React.memo(personListControl);
