@@ -6,6 +6,8 @@ import PersonListControl from '../components/PersonListControl/PersonListControl
 import Aux from '../hoc/Aux'
 import withClass from '../hoc/withClass'
 
+export const AuthContext = React.createContext(false);
+
 class App extends PureComponent {
   constructor(props) {
     super(props);
@@ -96,8 +98,7 @@ class App extends PureComponent {
         <Persons 
           persons={this.state.persons}
           clicked={this.deletePersonHandler}
-          changed={this.nameChangedHandler}
-          isAuthenticated={this.state.authenticated} />
+          changed={this.nameChangedHandler} />
       );
     }
     
@@ -110,7 +111,9 @@ class App extends PureComponent {
           persons={this.state.persons} 
           clicked={this.togglePersonHandler}
           login={this.loginHandler} />
+        <AuthContext.Provider value={this.state.authenticated} >
         {persons}
+        </AuthContext.Provider>
       </Aux>
     );
   }
