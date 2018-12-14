@@ -19,8 +19,10 @@ const personListControl = (props) => {
       <h1>{props.appTitle}</h1>
       <p className={classes.join(' ')}>List of People:</p>
       <button
-      className={btnClass}
-      onClick={props.clicked}>Toggle Person List</button>
+        className={btnClass}
+        onClick={props.clicked}>Toggle Person List</button>
+      <button
+        onClick={props.login}>Log In</button>
     </Aux>
   );
 };
